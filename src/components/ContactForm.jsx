@@ -35,14 +35,13 @@ const ContactForm = () => {
     }
 
     try {
-        // You can connect this form to an API or a service to send emails.
-        // For now, we'll simulate a successful form submission.
-        // Send email with EmailJS (replace with your service and template ID)
+       
+        // Send email with EmailJS
         const result = await emailjs.send(
-            emailjsServiceId, // Your EmailJS service ID
-            emailjsTemplateId, // Your EmailJS template ID
+            emailjsServiceId, //EmailJS service ID
+            emailjsTemplateId, //EmailJS template ID
             formData,
-            emailjsUserId // Your EmailJS user ID
+            emailjsUserId //EmailJS user ID
         );
 
       setStatus("Submitting...");
