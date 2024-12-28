@@ -10,6 +10,7 @@ const emailjsUserId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
+    to_name: "Jennifer", 
     name: "",
     email: "",
     message: "",
