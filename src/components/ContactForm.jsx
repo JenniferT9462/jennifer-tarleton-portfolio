@@ -2,6 +2,12 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
 
+//Import environment variables for EmailJS
+const emailjsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+const emailjsTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+const emailjsUserId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,10 +39,10 @@ const ContactForm = () => {
         // For now, we'll simulate a successful form submission.
         // Send email with EmailJS (replace with your service and template ID)
         const result = await emailjs.send(
-            "service_8e1nzoo", // Your EmailJS service ID
-            "template_leczw8g", // Your EmailJS template ID
+            emailjsServiceId, // Your EmailJS service ID
+            emailjsTemplateId, // Your EmailJS template ID
             formData,
-            "rHwgte737NRv0jJ5P" // Your EmailJS user ID
+            emailjsUserId // Your EmailJS user ID
         );
 
       setStatus("Submitting...");
